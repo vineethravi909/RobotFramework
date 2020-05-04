@@ -3,7 +3,7 @@ Resource  ../Operational/instructions.robot
 Resource  ../Operational/locatorVariables.robot
 
 
-
+#robot -d results Tests/TestCases.robot  
 
 
 *** Test Cases ***
