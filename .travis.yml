@@ -11,7 +11,10 @@ addons:
       - xvfb
       - dpkg
   chrome: stable
-  
+
+before_script:
+  - export CHROME_BIN=chromium-browser
+
 script:
   - robot -d results Tests/TestCases.robot
 
