@@ -1,5 +1,8 @@
 *** Settings ***
 Library  SeleniumLibrary
+Library  Collections
+Resource  ../Operational/instructions.robot
+Resource  ../Operational/locatorVariables.robot
 
 *** Keywords ***
 Open India Bookstore
