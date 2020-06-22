@@ -7,11 +7,11 @@ install:
 
 addons:
   apt:
-    sources:
-      - google-chrome
     packages:
-      - google-chrome-stable
-
+      - xvfb
+      - dpkg
+  chrome: stable
+  
 script:
   - robot -d results Tests/TestCases.robot
 
