@@ -5,8 +5,9 @@ python:
 install:
   - pip install -r requirement.txt
   - pip install .
-script:
-  - robot -d results Tests/TestCases.robot
+before_script:
+  - easy_install distribute
+  - pip install -r requirement.txt
 deploy:
   provider: pages
   skip-cleanup: true
