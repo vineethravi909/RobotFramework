@@ -5,10 +5,12 @@ python:
 install:
   - pip install -r requirements.txt
 
-before_script:
-  - wget http://chromedriver.storage.googleapis.com/83.0.4103.39/chromedriver_mac64.zip
-  - unzip chromedriver_mac64.zip -d /home/travis/virtualenv/python3.7.6/bin/
-  - export CHROME_BIN=chromium-browser
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 
 script:
   - robot -d results Tests/TestCases.robot
