@@ -8,7 +8,7 @@ install:
   - pip install -r requirements.txt
   - virtualenv test-env --no-setuptools
   - mkdir -p buildout-cache/downloads
-  - test-env/bin/python bootstrap.py -c travis.cfg
+  
 sudo: required
 addons:
   chrome: stable
