@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.7.6 on darwin)" generated="20200623 03:42:37.541" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.7.6 on darwin)" generated="20200623 04:11:49.049" rpa="false">
 <suite id="s1" name="TestCases" source="/Users/nradhakrishnan/RobotWorkspace/demo_BookDetailView/Tests/TestCases.robot">
 <test id="s1-t1" name="User should be able to Land on Book details Page">
 <kw name="Open India Bookstore" library="instructions">
@@ -9,20 +9,20 @@
 <arg>${url_books}</arg>
 <arg>${brows}</arg>
 </arguments>
-<msg timestamp="20200623 03:42:37.748" level="INFO">Opening browser 'gc' to base url 'https://www.indiabookstore.net/'.</msg>
-<status status="PASS" starttime="20200623 03:42:37.748" endtime="20200623 03:42:43.156"></status>
+<msg timestamp="20200623 04:11:49.311" level="INFO">Opening browser 'gc' to base url 'https://www.indiabookstore.net/'.</msg>
+<status status="PASS" starttime="20200623 04:11:49.311" endtime="20200623 04:11:53.567"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200623 03:42:43.156" endtime="20200623 03:42:43.309"></status>
+<status status="PASS" starttime="20200623 04:11:53.568" endtime="20200623 04:11:53.727"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>4s</arg>
 </arguments>
-<msg timestamp="20200623 03:42:47.312" level="INFO">Slept 4 seconds</msg>
-<status status="PASS" starttime="20200623 03:42:43.309" endtime="20200623 03:42:47.312"></status>
+<msg timestamp="20200623 04:11:57.729" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20200623 04:11:53.727" endtime="20200623 04:11:57.729"></status>
 </kw>
 <kw name="Verify WebPage title" library="instructions">
 <arguments>
@@ -33,30 +33,300 @@
 <arguments>
 <arg>${title_name}</arg>
 </arguments>
+<status status="PASS" starttime="20200623 04:11:57.731" endtime="20200623 04:11:57.747"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${title_name}</arg>
+</arguments>
+<status status="PASS" starttime="20200623 04:11:57.748" endtime="20200623 04:11:57.748"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Pass!!</arg>
+</arguments>
+<status status="PASS" starttime="20200623 04:11:57.748" endtime="20200623 04:11:57.749"></status>
+</kw>
+<status status="PASS" starttime="20200623 04:11:57.730" endtime="20200623 04:11:57.749"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(0, 500)</arg>
+</arguments>
+<msg timestamp="20200623 04:11:57.749" level="INFO">Executing JavaScript:
+window.scrollTo(0, 500)
+Without any arguments.</msg>
+<status status="PASS" starttime="20200623 04:11:57.749" endtime="20200623 04:11:57.755"></status>
+</kw>
+<status status="PASS" starttime="20200623 04:11:49.311" endtime="20200623 04:11:57.755"></status>
+</kw>
+<kw name="Navigate to Category &quot;Computing and Internet&quot;" library="instructions">
+<kw name="Get Element Count" library="SeleniumLibrary">
+<doc>Returns the number of elements matching ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li</arg>
+</arguments>
+<assign>
+<var>${category_count}</var>
+</assign>
+<msg timestamp="20200623 04:11:57.768" level="INFO">${category_count} = 21</msg>
+<status status="PASS" starttime="20200623 04:11:57.756" endtime="20200623 04:11:57.768"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3s</arg>
+</arguments>
+<msg timestamp="20200623 04:12:00.770" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200623 04:11:57.769" endtime="20200623 04:12:00.770"></status>
+</kw>
+<kw name="${i} IN RANGE [ 1 | ${category_count} ]" type="for">
+<kw name="${i} = 1" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a</arg>
+</arguments>
+<assign>
+<var>${dynamic_categ_name}</var>
+</assign>
+<msg timestamp="20200623 04:12:00.793" level="INFO">${dynamic_categ_name} = Academic</msg>
+<status status="PASS" starttime="20200623 04:12:00.770" endtime="20200623 04:12:00.793"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a</arg>
+</arguments>
+<status status="PASS" starttime="20200623 04:12:00.794" endtime="20200623 04:12:06.069"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>"${dynamic_categ_name}" == "${Expected_category}"</arg>
+</arguments>
+<status status="PASS" starttime="20200623 04:12:06.070" endtime="20200623 04:12:06.070"></status>
+</kw>
+<status status="PASS" starttime="20200623 04:12:00.770" endtime="20200623 04:12:06.070"></status>
+</kw>
+<kw name="${i} = 2" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a</arg>
+</arguments>
+<assign>
+<var>${dynamic_categ_name}</var>
+</assign>
+<msg timestamp="20200623 04:12:06.100" level="INFO">${dynamic_categ_name} = Action &amp; Adventure</msg>
+<status status="PASS" starttime="20200623 04:12:06.071" endtime="20200623 04:12:06.100"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a</arg>
+</arguments>
+<status status="PASS" starttime="20200623 04:12:06.100" endtime="20200623 04:12:11.519"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>"${dynamic_categ_name}" == "${Expected_category}"</arg>
+</arguments>
+<status status="PASS" starttime="20200623 04:12:11.520" endtime="20200623 04:12:11.520"></status>
+</kw>
+<status status="PASS" starttime="20200623 04:12:06.071" endtime="20200623 04:12:11.520"></status>
+</kw>
+<kw name="${i} = 3" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a</arg>
+</arguments>
+<assign>
+<var>${dynamic_categ_name}</var>
+</assign>
+<msg timestamp="20200623 04:12:11.544" level="INFO">${dynamic_categ_name} = Biographies &amp; True Accounts</msg>
+<status status="PASS" starttime="20200623 04:12:11.520" endtime="20200623 04:12:11.544"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a</arg>
+</arguments>
+<status status="PASS" starttime="20200623 04:12:11.544" endtime="20200623 04:12:16.847"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>"${dynamic_categ_name}" == "${Expected_category}"</arg>
+</arguments>
+<status status="PASS" starttime="20200623 04:12:16.847" endtime="20200623 04:12:16.848"></status>
+</kw>
+<status status="PASS" starttime="20200623 04:12:11.520" endtime="20200623 04:12:16.848"></status>
+</kw>
+<kw name="${i} = 4" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a</arg>
+</arguments>
+<assign>
+<var>${dynamic_categ_name}</var>
+</assign>
+<msg timestamp="20200623 04:12:16.872" level="INFO">${dynamic_categ_name} = Business, Investing and Management</msg>
+<status status="PASS" starttime="20200623 04:12:16.848" endtime="20200623 04:12:16.872"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a</arg>
+</arguments>
+<status status="PASS" starttime="20200623 04:12:16.872" endtime="20200623 04:12:22.185"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>"${dynamic_categ_name}" == "${Expected_category}"</arg>
+</arguments>
+<status status="PASS" starttime="20200623 04:12:22.186" endtime="20200623 04:12:22.186"></status>
+</kw>
+<status status="PASS" starttime="20200623 04:12:16.848" endtime="20200623 04:12:22.186"></status>
+</kw>
+<kw name="${i} = 5" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a</arg>
+</arguments>
+<assign>
+<var>${dynamic_categ_name}</var>
+</assign>
+<msg timestamp="20200623 04:12:22.210" level="INFO">${dynamic_categ_name} = Children's Books</msg>
+<status status="PASS" starttime="20200623 04:12:22.187" endtime="20200623 04:12:22.210"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a</arg>
+</arguments>
+<status status="PASS" starttime="20200623 04:12:22.210" endtime="20200623 04:12:27.573"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>"${dynamic_categ_name}" == "${Expected_category}"</arg>
+</arguments>
+<status status="PASS" starttime="20200623 04:12:27.573" endtime="20200623 04:12:27.573"></status>
+</kw>
+<status status="PASS" starttime="20200623 04:12:22.186" endtime="20200623 04:12:27.573"></status>
+</kw>
+<kw name="${i} = 6" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a</arg>
+</arguments>
+<assign>
+<var>${dynamic_categ_name}</var>
+</assign>
+<msg timestamp="20200623 04:12:27.597" level="INFO">${dynamic_categ_name} = Comics &amp; Manga</msg>
+<status status="PASS" starttime="20200623 04:12:27.574" endtime="20200623 04:12:27.597"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a</arg>
+</arguments>
+<status status="PASS" starttime="20200623 04:12:27.597" endtime="20200623 04:12:32.926"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>"${dynamic_categ_name}" == "${Expected_category}"</arg>
+</arguments>
+<status status="PASS" starttime="20200623 04:12:32.926" endtime="20200623 04:12:32.927"></status>
+</kw>
+<status status="PASS" starttime="20200623 04:12:27.574" endtime="20200623 04:12:32.927"></status>
+</kw>
+<kw name="${i} = 7" type="foritem">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a</arg>
+</arguments>
+<assign>
+<var>${dynamic_categ_name}</var>
+</assign>
+<msg timestamp="20200623 04:12:32.952" level="INFO">${dynamic_categ_name} = Computing &amp; Internet</msg>
+<status status="PASS" starttime="20200623 04:12:32.927" endtime="20200623 04:12:32.953"></status>
+</kw>
+<kw name="Scroll Element Into View" library="SeleniumLibrary">
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<arguments>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a</arg>
+</arguments>
+<status status="PASS" starttime="20200623 04:12:32.953" endtime="20200623 04:12:37.839"></status>
+</kw>
+<kw name="Exit For Loop If" library="BuiltIn">
+<doc>Stops executing the enclosing for loop if the ``condition`` is true.</doc>
+<arguments>
+<arg>"${dynamic_categ_name}" == "${Expected_category}"</arg>
+</arguments>
+<msg timestamp="20200623 04:12:37.840" level="INFO">Exiting for loop altogether.</msg>
+<status status="PASS" starttime="20200623 04:12:37.839" endtime="20200623 04:12:37.840"></status>
+</kw>
+<status status="PASS" starttime="20200623 04:12:32.927" endtime="20200623 04:12:37.840"></status>
+</kw>
+<status status="PASS" starttime="20200623 04:12:00.770" endtime="20200623 04:12:37.840"></status>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${static_categ_name}</arg>
+<arg>xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a</arg>
+</arguments>
+<msg timestamp="20200623 04:12:37.841" level="INFO">${static_categ_name} = xpath=//*[@id="leftNavContainer"]/ul/li[7]/a</msg>
+<status status="PASS" starttime="20200623 04:12:37.840" endtime="20200623 04:12:37.841"></status>
+</kw>
+<status status="PASS" starttime="20200623 04:11:57.755" endtime="20200623 04:12:37.841"></status>
+</kw>
+<kw name="Click on &quot;Digital Media and Internet&quot; Sub Section" library="instructions">
+<kw name="Mouse Over" library="SeleniumLibrary">
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<arguments>
+<arg>${static_categ_name}</arg>
+</arguments>
+<msg timestamp="20200623 04:12:37.842" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="leftNavContainer"]/ul/li[7]/a'.</msg>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200623 03:42:47.331" level="FAIL">NoSuchWindowException: Message: no such window: window was already closed
+<msg timestamp="20200623 04:12:37.851" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=83.0.4103.116)
 </msg>
-<status status="FAIL" starttime="20200623 03:42:47.319" endtime="20200623 03:42:47.331"></status>
+<status status="FAIL" starttime="20200623 04:12:37.844" endtime="20200623 04:12:37.851"></status>
 </kw>
-<msg timestamp="20200623 03:42:47.331" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: window was already closed
+<msg timestamp="20200623 04:12:37.851" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=83.0.4103.116)
 </msg>
-<msg timestamp="20200623 03:42:47.334" level="FAIL">NoSuchWindowException: Message: no such window: window was already closed
+<msg timestamp="20200623 04:12:37.855" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=83.0.4103.116)
 </msg>
-<status status="FAIL" starttime="20200623 03:42:47.313" endtime="20200623 03:42:47.335"></status>
+<status status="FAIL" starttime="20200623 04:12:37.842" endtime="20200623 04:12:37.855"></status>
 </kw>
-<status status="FAIL" starttime="20200623 03:42:47.312" endtime="20200623 03:42:47.335"></status>
+<status status="FAIL" starttime="20200623 04:12:37.842" endtime="20200623 04:12:37.856"></status>
 </kw>
-<status status="FAIL" starttime="20200623 03:42:37.748" endtime="20200623 03:42:47.335"></status>
-</kw>
-<status status="FAIL" starttime="20200623 03:42:37.747" endtime="20200623 03:42:47.335" critical="yes">NoSuchWindowException: Message: no such window: window was already closed
+<status status="FAIL" starttime="20200623 04:11:49.310" endtime="20200623 04:12:37.856" critical="yes">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=83.0.4103.116)
 </status>
 </test>
-<status status="FAIL" starttime="20200623 03:42:37.542" endtime="20200623 03:42:47.336"></status>
+<status status="FAIL" starttime="20200623 04:11:49.050" endtime="20200623 04:12:37.858"></status>
 </suite>
 <statistics>
 <total>
@@ -70,7 +340,8 @@
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20200623 03:42:47.331" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: window was already closed
+<msg timestamp="20200623 04:12:37.851" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=83.0.4103.116)
 </msg>
 </errors>
