@@ -15,11 +15,17 @@ include:
       language: generic
       env: PYTHON=3.7.6
 
+addons:
+  chrome: stable
+  apt:
+    packages:
+      - chromium-chromedriver
+
 before_script:
-  - wget http://chromedriver.storage.googleapis.com/81.0.4044.69/chromedriver_mac64.zip
-  - unzip chromedriver_mac64.zip -d /home/travis/virtualenv/python3.7.6/bin/
-  - export CHROME_BIN=chromedriver
-  - echo $PATH
+  # include ChromeDriver in PATH
+  - ln --symbolic /usr/lib/chromium-browser/chromedriver "${HOME}/bin/chromedriver"
+  # start Chrome and listen on localhost
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
   
 install:
   - pip install -r requirements.txt
