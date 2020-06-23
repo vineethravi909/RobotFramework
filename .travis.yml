@@ -16,8 +16,8 @@ include:
       language: generic
   
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install chromium-chromedriver
+  - # start your web application and listen on `localhost`
+  - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &"
 
 before_script:
   - sh -e /etc/init.d/xvfb start
