@@ -4,6 +4,10 @@ language: python
 python:
   - "3.7.6"
 addons:
+  apt:
+    packages:
+      - xvfb
+      - dpkg
   chrome: stable
 
 jobs:
@@ -16,11 +20,19 @@ before_install:
   - sudo apt-get install chromium-chromedriver
 
 before_script:
-  - export PATH=$PATH:/usr/local/bin/chromedriver
+  - sh -e /etc/init.d/xvfb start
   - export DISPLAY=:99.0
 
 install:
   - pip install -r requirements.txt
+
+capabilities: [{
+    browserName: 'chrome',
+    'goog:chromeOptions': {
+  args: ['--headless', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage', '--window-size=1920,1080']
+  },
+  }],
+};
 
 script:
   - robot -d results Tests/TestCases.robot
