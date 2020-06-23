@@ -22,8 +22,8 @@ before_install:
   - bin/pip install --upgrade -r requirements.txt
 
 install:
-  - wget https://gsdview.appspot.com/chromium-browser-official/chromium-82.0.4085.6.tar.xz
-  - tar xf chromium-82.0.4085.6.tar.xz -C bin
+  - wget https://gsdview.appspot.com/chromium-browser-official/chromium-83.0.4103.116.tar.xz
+  - tar xf chromium-83.0.4103.116.tar.xz -C bin
   - export CHROME_BIN=chromium-browser
 
 script:
