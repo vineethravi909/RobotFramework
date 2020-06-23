@@ -11,6 +11,7 @@ Open India Bookstore
     sleep  4s
     Verify WebPage title  ${Expected_homePage}
     Execute Javascript  window.scrollTo(0, 500)
+    Log to Console  Step1
 
 Navigate to Category "Computing and Internet"
     ${category_count} =  Get Element Count  xpath=//*[@id="leftNavContainer"]/ul/li
@@ -23,6 +24,7 @@ Navigate to Category "Computing and Internet"
         Exit For Loop If  "${dynamic_categ_name}" == "${Expected_category}"
     END
     Set Test Variable  ${static_categ_name}  xpath=//*[@id="leftNavContainer"]/ul/li[${i}]/a
+    Log to Console  Step2
     
 
 Click on "Digital Media and Internet" Sub Section
@@ -32,6 +34,7 @@ Click on "Digital Media and Internet" Sub Section
     sleep  2s
     Click Element  ${Digital_Media}
     Verify WebPage title  ${Expected_Book_Category}
+    Log to Console  Step3
 
 
 Search for the book title 'Art of Community' in the Booklist
@@ -43,15 +46,18 @@ Search for the book title 'Art of Community' in the Booklist
     Exit For Loop If  "${buk_names}" == "${Expected_Book_Name}"
     END
     Set Test Variable  ${exact_buk_elem}  xpath=//div[@class='col-md-9']/div[${j}]/a/div[3]
+    Log to Console  Step4
 
 Go to Expected Book details page
     sleep  5s
     Click Element  ${exact_buk_elem}
+    Log to Console  Step5
     
 
 
 Verify User navigated to the expected book details
     Verify WebPage title  ${Expected_Book_Detailed_Name}
+    Log to Console  Step6
 
 Verify WebPage title
     [Arguments]  ${title_name}
