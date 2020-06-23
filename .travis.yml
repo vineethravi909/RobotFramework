@@ -20,7 +20,12 @@ before_install:
   - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &"
 
 before_script:
-  - export DISPLAY=:99.0
+  - wget "https://chromedriver.storage.googleapis.com/83.0.4103.39/chromedriver_mac64.zip"
+  - tar xfz chromedriver_mac64.zip
+  - sudo mv geckodriver /usr/local/bin
+  - 'export DISPLAY=:99.0'
+  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
+  - sleep 3
 
 install:
   - pip install -r requirements.txt
