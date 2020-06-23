@@ -24,7 +24,7 @@ before_install:
 install:
   - wget https://gsdview.appspot.com/chromium-browser-official/chromium-82.0.4085.6.tar.xz
   - tar xf chromium-82.0.4085.6.tar.xz -C bin
-  - export PATH=$(pwd)/bin:$PATH
+  - export CHROME_BIN=chromium-browser
 
 script:
   - robot -d results Tests/TC_lifecycle.robot
