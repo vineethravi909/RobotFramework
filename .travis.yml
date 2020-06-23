@@ -18,7 +18,7 @@ include:
 before_script:
   - wget http://chromedriver.storage.googleapis.com/81.0.4044.69/chromedriver_mac64.zip
   - unzip chromedriver_mac64.zip -d /home/travis/virtualenv/python3.7.6/bin/
-  - export CHROME_BIN=google-chrome
+  - export CHROME_BIN=chromedriver
   - echo $PATH
   
 install:
