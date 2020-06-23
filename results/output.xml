@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.7.6 on darwin)" generated="20200624 01:58:55.437" rpa="false">
-<suite id="s1" name="TC milestone" source="/Users/nradhakrishnan/RobotWorkspace/demo_BookDetailView/Tests/TC_milestone.robot">
+<robot generator="Robot 3.1.2 (Python 3.7.6 on darwin)" generated="20200624 03:44:57.699" rpa="false">
+<suite id="s1" name="TC lifecycle" source="/Users/nradhakrishnan/RobotWorkspace/demo_BookDetailView/Tests/TC_lifecycle.robot">
 <kw name="Begin Web Test" library="Common" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
@@ -8,256 +8,84 @@
 <arg>about:blank</arg>
 <arg>${brows_medidata}</arg>
 </arguments>
-<msg timestamp="20200624 01:58:55.682" level="INFO">Opening browser 'gc' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20200624 01:58:55.682" endtime="20200624 01:58:58.044"></status>
+<msg timestamp="20200624 03:44:57.965" level="INFO">Opening browser 'ff' to base url 'about:blank'.</msg>
+<msg timestamp="20200624 03:44:57.967" level="INFO">Firefox driver log is always forced to to: /Users/nradhakrishnan/RobotWorkspace/demo_BookDetailView/results/geckodriver-16.log</msg>
+<status status="PASS" starttime="20200624 03:44:57.965" endtime="20200624 03:45:03.213"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3s</arg>
 </arguments>
-<msg timestamp="20200624 01:59:01.047" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20200624 01:58:58.044" endtime="20200624 01:59:01.047"></status>
+<msg timestamp="20200624 03:45:06.215" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200624 03:45:03.214" endtime="20200624 03:45:06.215"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20200624 01:59:01.047" endtime="20200624 01:59:01.179"></status>
-</kw>
-<kw name="Set Screenshot Directory" library="SeleniumLibrary">
-<doc>Sets the directory for captured screenshots.</doc>
-<arguments>
-<arg>${ScreenhotFilePath}</arg>
-</arguments>
-<status status="PASS" starttime="20200624 01:59:01.179" endtime="20200624 01:59:01.180"></status>
-</kw>
-<status status="PASS" starttime="20200624 01:58:55.681" endtime="20200624 01:59:01.180"></status>
-</kw>
-<test id="s1-t1" name="User should be able to Create Configurable milestone template and Assign to Study">
-<kw name="Login Medidata" library="Common" type="setup">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${medidata_url}</arg>
-</arguments>
-<msg timestamp="20200624 01:59:01.182" level="INFO">Opening url 'https://login-sandbox.imedidata.net/login'</msg>
-<status status="PASS" starttime="20200624 01:59:01.182" endtime="20200624 01:59:16.889"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>4s</arg>
-</arguments>
-<msg timestamp="20200624 01:59:20.890" level="INFO">Slept 4 seconds</msg>
-<status status="PASS" starttime="20200624 01:59:16.889" endtime="20200624 01:59:20.890"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${M_username_element}</arg>
-<arg>${M_username}</arg>
-</arguments>
-<msg timestamp="20200624 01:59:20.891" level="INFO">Typing text 'StMg_Automation' into text field 'id=session_username'.</msg>
-<status status="PASS" starttime="20200624 01:59:20.891" endtime="20200624 01:59:21.035"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>1s</arg>
-</arguments>
-<msg timestamp="20200624 01:59:22.035" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20200624 01:59:21.035" endtime="20200624 01:59:22.035"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<arguments>
-<arg>${M_passwrdd_element}</arg>
-<arg>${M_passwrdd}</arg>
-</arguments>
-<msg timestamp="20200624 01:59:22.036" level="INFO">Typing text 'Automation_2020' into text field 'xpath=//*[@id="session_password"]'.</msg>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200624 01:59:22.169" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
+<msg timestamp="20200624 03:45:06.234" level="FAIL">NoSuchWindowException: Message: Browsing context has been discarded
 </msg>
-<status status="FAIL" starttime="20200624 01:59:22.160" endtime="20200624 01:59:22.169"></status>
+<status status="FAIL" starttime="20200624 03:45:06.219" endtime="20200624 03:45:06.235"></status>
 </kw>
-<msg timestamp="20200624 01:59:22.169" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
+<msg timestamp="20200624 03:45:06.235" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: Browsing context has been discarded
 </msg>
-<msg timestamp="20200624 01:59:22.172" level="FAIL">Element with locator 'xpath=//*[@id="session_password"]' not found.</msg>
-<status status="FAIL" starttime="20200624 01:59:22.036" endtime="20200624 01:59:22.172"></status>
-</kw>
-<status status="FAIL" starttime="20200624 01:59:01.181" endtime="20200624 01:59:22.172"></status>
-</kw>
-<kw name="LogOut Medidata" library="Common" type="teardown">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${M_HomeImage}</arg>
-</arguments>
-<msg timestamp="20200624 01:59:22.173" level="INFO">Clicking element 'xpath=//*[@id="mcc-header"]/ul[1]/li/a/span[1]'.</msg>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200624 01:59:22.177" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
+<msg timestamp="20200624 03:45:06.236" level="FAIL">NoSuchWindowException: Message: Browsing context has been discarded
 </msg>
-<status status="FAIL" starttime="20200624 01:59:22.175" endtime="20200624 01:59:22.177"></status>
+<status status="FAIL" starttime="20200624 03:45:06.216" endtime="20200624 03:45:06.237"></status>
 </kw>
-<msg timestamp="20200624 01:59:22.177" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-</msg>
-<msg timestamp="20200624 01:59:22.180" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-</msg>
-<status status="FAIL" starttime="20200624 01:59:22.173" endtime="20200624 01:59:22.180"></status>
+<status status="FAIL" starttime="20200624 03:44:57.965" endtime="20200624 03:45:06.237"></status>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>3s</arg>
-</arguments>
-<msg timestamp="20200624 01:59:25.181" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20200624 01:59:22.180" endtime="20200624 01:59:25.182"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${M_UserSettingsLink}</arg>
-</arguments>
-<msg timestamp="20200624 01:59:25.182" level="INFO">Clicking element 'id=name'.</msg>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200624 01:59:25.186" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-</msg>
-<status status="FAIL" starttime="20200624 01:59:25.184" endtime="20200624 01:59:25.186"></status>
-</kw>
-<msg timestamp="20200624 01:59:25.186" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-</msg>
-<msg timestamp="20200624 01:59:25.187" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-</msg>
-<status status="FAIL" starttime="20200624 01:59:25.182" endtime="20200624 01:59:25.187"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>${M_Logout}</arg>
-</arguments>
-<msg timestamp="20200624 01:59:25.187" level="INFO">Clicking element 'id=logout'.</msg>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20200624 01:59:25.191" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-</msg>
-<status status="FAIL" starttime="20200624 01:59:25.189" endtime="20200624 01:59:25.191"></status>
-</kw>
-<msg timestamp="20200624 01:59:25.191" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-</msg>
-<msg timestamp="20200624 01:59:25.192" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-</msg>
-<status status="FAIL" starttime="20200624 01:59:25.187" endtime="20200624 01:59:25.192"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>3s</arg>
-</arguments>
-<msg timestamp="20200624 01:59:28.193" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" starttime="20200624 01:59:25.192" endtime="20200624 01:59:28.193"></status>
-</kw>
-<status status="FAIL" starttime="20200624 01:59:22.172" endtime="20200624 01:59:28.194">Several failures occurred:
-
-1) NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-
-
-2) NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-
-
-3) NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-</status>
-</kw>
+<test id="s1-t1" name="User should be able to create a submission at the site level">
 <tags>
 <tag>e2e</tag>
 </tags>
-<status status="FAIL" starttime="20200624 01:59:01.180" endtime="20200624 01:59:28.194" critical="yes">Setup failed:
-Element with locator 'xpath=//*[@id="session_password"]' not found.
-
-Also teardown failed:
-Several failures occurred:
-
-1) NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-
-
-2) NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-
-
-3) NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
+<status status="FAIL" starttime="20200624 03:45:06.237" endtime="20200624 03:45:06.238" critical="yes">Parent suite setup failed:
+NoSuchWindowException: Message: Browsing context has been discarded
+</status>
+</test>
+<test id="s1-t2" name="Links from TM Lifecycle Widget navigate to the correct page in TM Application">
+<tags>
+<tag>e2e</tag>
+</tags>
+<status status="FAIL" starttime="20200624 03:45:06.239" endtime="20200624 03:45:06.239" critical="yes">Parent suite setup failed:
+NoSuchWindowException: Message: Browsing context has been discarded
+</status>
+</test>
+<test id="s1-t3" name="Links from Site Lifecycle Widget navigate to the correct page in Site Monitoring Application">
+<tags>
+<tag>r07_SM</tag>
+</tags>
+<status status="FAIL" starttime="20200624 03:45:06.239" endtime="20200624 03:45:06.240" critical="yes">Parent suite setup failed:
+NoSuchWindowException: Message: Browsing context has been discarded
 </status>
 </test>
 <kw name="Close Web Test" library="Common" type="teardown">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20200624 01:59:28.202" endtime="20200624 01:59:28.292"></status>
+<status status="PASS" starttime="20200624 03:45:06.241" endtime="20200624 03:45:06.825"></status>
 </kw>
-<status status="PASS" starttime="20200624 01:59:28.201" endtime="20200624 01:59:28.292"></status>
+<status status="PASS" starttime="20200624 03:45:06.240" endtime="20200624 03:45:06.825"></status>
 </kw>
-<status status="FAIL" starttime="20200624 01:58:55.438" endtime="20200624 01:59:28.292"></status>
+<status status="FAIL" starttime="20200624 03:44:57.701" endtime="20200624 03:45:06.825">Suite setup failed:
+NoSuchWindowException: Message: Browsing context has been discarded
+</status>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1">Critical Tests</stat>
-<stat pass="0" fail="1">All Tests</stat>
+<stat pass="0" fail="3">Critical Tests</stat>
+<stat pass="0" fail="3">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1">e2e</stat>
+<stat pass="0" fail="2">e2e</stat>
+<stat pass="0" fail="1">r07_SM</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" id="s1" name="TC milestone">TC milestone</stat>
+<stat pass="0" fail="3" id="s1" name="TC lifecycle">TC lifecycle</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20200624 01:59:22.169" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-</msg>
-<msg timestamp="20200624 01:59:22.177" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-</msg>
-<msg timestamp="20200624 01:59:25.186" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
-</msg>
-<msg timestamp="20200624 01:59:25.191" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=83.0.4103.116)
+<msg timestamp="20200624 03:45:06.235" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: Browsing context has been discarded
 </msg>
 </errors>
 </robot>
