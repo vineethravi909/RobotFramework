@@ -21,7 +21,6 @@ before_script:
 
 install:
   - pip install -r requirements.txt
-  - npm install && node_modules/brunch/bin/brunch build
 
 script:
   - robot -d results Tests/TestCases.robot
