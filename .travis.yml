@@ -10,32 +10,15 @@ jobs:
 include:
     - os: osx
       language: generic
-      env: TOXENV=py32
-    - os: osx
-      language: generic
-      env: TOXENV=py33
-    - os: osx
-      language: generic
-      env: PYTHON=3.7.6
-
-before_install:
-  - wget http://chromedriver.storage.googleapis.com/81.0.4044.69/chromedriver_mac64.zip
-  - unzip chromedriver_mac64.zip -d /home/travis/virtualenv/python3.7.6/bin/
-  - export CHROME_BIN=chromium-browser
-  - echo $PATH
   
 before_script:
-  - export PATH=$PATH:/usr/lib/chromium-browser/
-  - export DISPLAY=:99.0
-  #- sh -e /etc/init.d/xvfb start
-  - sleep 3 # give xvfb some time to start
-  - nohup chromedriver &
+  - bundle exec rails runner "Webdrivers::Chromedriver.update"
 
 install:
   - pip install -r requirements.txt
 
 script:
-  - robot -d results Tests/TestCases.robot
+  - robot -d results -v BROWSER:gc -i sanity tests
 
 deploy:
   provider: pages

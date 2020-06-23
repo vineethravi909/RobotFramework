@@ -8,6 +8,7 @@ Resource  ../Operational/locatorVariables.robot
 
 *** Test Cases ***
 User should be able to Land on Book details Page
+    [Tags]    sanity
     Open India Bookstore
     Navigate to Category "Computing and Internet"
     Click on "Digital Media and Internet" Sub Section
