@@ -1,41 +1,33 @@
-sudo: required
-build: trusty
-language: python
-python:
-  - "3.7.6"
+services:
+  - xvfb
 addons:
   apt:
     packages:
-      - xvfb
-      - dpkg
-  chrome: stable
+      - libgtk-3-dev
+language: python
+sudo: false
+cache:
+  pip: true
 
-jobs:
-include:
-    - os: osx
-      language: generic
-  
+python:
+  - '3.7'
+matrix:
+  fast_finish: true
 before_install:
-  - # start your web application and listen on `localhost`
-  - "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --headless --disable-gpu --remote-debugging-port=9222 http://localhost &"
-
-before_script:
-  - wget "https://chromedriver.storage.googleapis.com/83.0.4103.39/chromedriver_mac64.zip"
-  - unzip chromedriver_mac64.zip
-  - sudo mv chromedriver /usr/local/bin
-  - 'export DISPLAY=:99.0'
-  - Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 &
-  - sleep 3
+  - firefox -v
+  - virtualenv .
+  - bin/pip install pathlib2
+  - bin/pip3 install -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-18.04/wxPython-4.0.6-cp37-cp37m-linux_x86_64.whl -vvv wxPython
+  - bin/pip install --upgrade -r requirements.txt
 
 install:
-  - pip install -r requirements.txt
+  - bin/buildout -N buildout:download-cache=downloads code-analysis:return-status-codes=True annotate
+  - bin/buildout -N buildout:download-cache=downloads code-analysis:return-status-codes=True
+  - bin/buildout -c development.cfg -N buildout:download-cache=downloads code-analysis:return-status-codes=True annotate
+  - bin/buildout -c development.cfg -N buildout:download-cache=downloads code-analysis:return-status-codes=True
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
+  - tar -xzf geckodriver-v0.26.0-linux64.tar.gz -C bin
+  - export PATH=$(pwd)/bin:$PATH
 
 script:
   - robot -d results Tests/TestCases.robot
-
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GITHUB_TOKEN
-  on:
-    branch: master
