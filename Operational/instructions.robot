@@ -29,10 +29,12 @@ Navigate to Category "Computing and Internet"
 
 Click on "Digital Media and Internet" Sub Section
     Mouse Over  ${static_categ_name}
-    sleep  3s
+    sleep  1s
     Mouse Over  ${Digital_Media}
-    sleep  2s
+    sleep  3s
+    Verify WebPage title  Digital Media and Internet
     Click Element  ${Digital_Media}
+    sleep  1s
     Verify WebPage title  ${Expected_Book_Category}
     Log to Console  Step3
 

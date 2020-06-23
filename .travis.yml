@@ -26,4 +26,4 @@ install:
   - export PATH=$(pwd)/bin:$PATH
 
 script:
-  - robot -d results Tests/TestCases.robot
+  - robot -d results Tests/TC_milestone.robot
