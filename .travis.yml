@@ -12,10 +12,7 @@ include:
       language: generic
   
 before_script:
-  - CHROME_MAIN_VERSION=`google-chrome-stable --version | sed -E 's/(^Google Chrome |\.[0-9]+ )//g'`
-  - CHROMEDRIVER_VERSION=`curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_MAIN_VERSION"`
-  - curl "https://chromedriver.storage.googleapis.com/${CHROMEDRIVER_VERSION}/chromedriver_mac64.zip" -O
-  - unzip chromedriver_mac64.zip -d ~/bin
+  - export PATH=$PATH:/usr/local/bin/chromedriver/
 
 install:
   - pip install -r requirements.txt
