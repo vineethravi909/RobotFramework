@@ -18,7 +18,7 @@ python:
 matrix:
   fast_finish: true
 before_install:
-  - firefox -v
+  - chrome -v
   - virtualenv .
   - bin/pip install pathlib2
   #- bin/pip3 install -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-18.04/wxPython-4.0.6-cp37-cp37m-linux_x86_64.whl -vvv wxPython
@@ -30,4 +30,4 @@ install:
   - export PATH=$(pwd)/bin:$PATH
 
 script:
-  - robot -d results Tests/TC_milestone.robot
+  - robot -d results Tests/TC_lifecycle.robot
