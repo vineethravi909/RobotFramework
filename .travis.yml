@@ -19,8 +19,8 @@ before_install:
   - virtualenv .
   - bin/pip install pathlib2
   #- bin/pip3 install -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-18.04/wxPython-4.0.6-cp37-cp37m-linux_x86_64.whl -vvv wxPython
-  - bin/pip install --upgrade -r requirements.txt
-
+  #- bin/pip install --upgrade -r requirements.txt
+  - pip install -r requirements.txt
 install:
   - wget https://gsdview.appspot.com/chromium-browser-official/chromium-83.0.4103.116.tar.xz
   - tar xf chromium-83.0.4103.116.tar.xz -C bin
