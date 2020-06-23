@@ -21,7 +21,7 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - robot -d results -v BROWSER:gc -i sanity tests
+  - robot -d results -v BROWSER:gc -i sanity Tests
 
 deploy:
   provider: pages
