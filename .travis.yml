@@ -26,14 +26,6 @@ before_script:
 install:
   - pip install -r requirements.txt
 
-capabilities: [{
-    browserName: 'chrome',
-    'goog:chromeOptions': {
-  args: ['--headless', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage', '--window-size=1920,1080']
-  },
-  }],
-};
-
 script:
   - robot -d results Tests/TestCases.robot
 
