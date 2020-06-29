@@ -2,7 +2,7 @@
 
 #Tester Inputs
 ${medidata_url} =  https://login-sandbox.imedidata.net/login
-${brows_medidata} =  gc
+${brows_medidata} =  headlesschrome
 ${M_username} =  StMg_Automation
 ${M_passwrdd} =  Automation_2020
 ${M_username_element} =  id=session_username
