@@ -4,11 +4,11 @@ services:
   - xvfb
 addons:
   firefox: latest
+  chrome: stable
   apt:
     source:
     - google-chrome
     packages:
-    - google-chrome-stable
     - libgtk-3-dev
 
 cache:
