@@ -22,6 +22,7 @@ before_install:
   - npm install web-component-tester
   - npm install bower
   - export PATH=$pwd/node_modules/.bin:$PATH
+  - pip install webdriver-manager
   - pip install -r requirements.txt
 
 install:
