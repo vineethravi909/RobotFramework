@@ -15,3 +15,5 @@ User should be able to Land on Book details Page
     Search for the book title 'Art of Community' in the Booklist
     Go to Expected Book details page
     Verify User navigated to the expected book details
+    Click on Amazon link
+    ADD to Cart on Amazon

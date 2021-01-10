@@ -61,6 +61,17 @@ Verify User navigated to the expected book details
     Verify WebPage title  ${Expected_Book_Detailed_Name}
     Log to Console  Step6
 
+Click on Amazon link
+    Click Element  xpath=//a[contains(text(),'Rs.2,644 @Amazon')]
+
+ADD to Cart on Amazon
+    Select Window  ${Expected_Website}
+    sleep  5s
+    Click Element  id=add-to-cart-button
+    #Log to Console  Step7
+    Log to Console  ${Expected_Website}
+    Log to Console  Pass!!!
+
 Verify WebPage title
     [Arguments]  ${title_name}
     Wait Until Page Contains  ${title_name}
